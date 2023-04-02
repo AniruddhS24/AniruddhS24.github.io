@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Aniruddh Sriram</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.cdnfonts.com/css/sf-pro-display"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <style>
+      body {
+        font-family: "SF Pro Display", sans-serif;
+      }
+      .feather-32 {
+        width: 32px;
+        height: 32px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
+      <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav ms-auto me-4 gap-4">
+            <a class="nav-link active" href="#">About</a>
+            <a class="nav-link" href="#">Projects</a>
+            <a class="nav-link" href="#">Resume</a>
+            <a class="nav-link" href="#">Blog</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid" id="about">
+      <div
+        class="row align-items-center justify-content-center vh-100 column-gap-5"
+      >
+        <div class="col-md-auto">
+          <img
+            src="assets/aniruddhpfp2.jpg"
+            class="img-fluid rounded mx-auto d-block mb-3"
+            alt="pfp"
+            style="width: 250px"
+          />
+          <!-- <button type="button" class="btn btn-outline-secondary w-100">
+            Full Stack Developer
+          </button> -->
+          <div class="mt-0 mb-0 bg-light rounded">
+            <p class="fs-6 text-center text-secondary p-1" id="rolediv">
+              Full Stack Developer
+            </p>
+          </div>
+          <div>
+            <!-- <p class="fs-5 text-center text-secondary">Full Stack Developer</p> -->
+            <!-- Put a horizontal line here -->
+            <hr />
+            <div class="mt-2">
+              <i
+                data-feather="at-sign"
+                class="me-2 feather-32 bg-light p-1 rounded text-secondary"
+              ></i>
+              <span class="fs-6 align-bottom"
+                ><a
+                  target="_blank"
+                  href="mailto:aniruddh.sriram@utexas.edu"
+                  class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
+                  >aniruddh.sriram@utexas.edu</a
+                ></span
+              >
+            </div>
+            <div class="mt-2">
+              <i
+                data-feather="phone"
+                class="me-2 feather-32 bg-light p-1 rounded text-secondary"
+              ></i>
+              <span class="fs-6 align-bottom"
+                ><a
+                  target="_blank"
+                  href="tel:832-540-7633"
+                  class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
+                  >(832) - 540 - 7633</a
+                ></span
+              >
+            </div>
+            <div class="mt-2">
+              <i
+                data-feather="linkedin"
+                class="me-2 feather-32 bg-light p-1 rounded text-secondary"
+              ></i>
+              <span class="fs-6 align-bottom"
+                ><a
+                  target="_blank"
+                  href="https://www.linkedin.com/in/aniruddh-sriram/"
+                  class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
+                  >aniruddh-sriram</a
+                ></span
+              >
+            </div>
+            <div class="mt-2">
+              <i
+                data-feather="github"
+                class="me-2 feather-32 bg-light p-1 rounded text-secondary"
+              ></i>
+              <span class="fs-6 align-bottom"
+                ><a
+                  target="_blank"
+                  href="https://github.com/AniruddhS24"
+                  class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
+                  >AniruddhS24</a
+                ></span
+              >
+            </div>
+            <hr />
+            <!-- <div class="mt-2 bg-light p-2 rounded text-center">Resume</div> -->
+            <button type="button" class="btn btn-dark mt-2 w-100">
+              Resume
+            </button>
+          </div>
+        </div>
+        <div class="col-6">
+          <div>
+            <p style="font-size: 72px" id="hello">Hello! I'm Aniruddh.</p>
+            <p class="fs-5">
+              I am a student studying math and computer science in the Turing
+              Scholar's program at UT Austin. I love building software and am
+              passionate about research. My interests lie in full-stack
+              development, machine learning, and using NLP to develop robust
+              fact-checking systems.
+            </p>
+          </div>
+          <div style="height: 150px"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid" id="projects" hidden>Projects</div>
+
+    <div class="container-fluid" id="resume" hidden>Resume</div>
+
+    <div class="container-fluid" id="blog" hidden>Blog</div>
+    <script>
+      feather.replace();
+
+      // every 2 seconds, change the color of rolediv
+      var rolediv_index = 0;
+      const roles = [
+        "Full Stack Developer",
+        "Mathematician",
+        "Researcher",
+        "Student",
+        "Tech Enthusiast",
+        "Acrylic Artist",
+      ];
+      setInterval(() => {
+        let rolediv = document.getElementById("rolediv");
+        // rolediv.style.backgroundColor = light_colors[rolediv_index];
+        rolediv.innerHTML = roles[rolediv_index];
+        rolediv_index = (rolediv_index + 1) % roles.length;
+        // change the text color to light if its a dark background, and dark if its a light background
+      }, 2000);
+
+      // handle navigation tab changing
+      var navlinks = document.getElementsByClassName("nav-link");
+      const tabs = ["about", "projects", "resume", "blog"];
+      for (var i = 0; i < navlinks.length; i++) {
+        navlinks[i].addEventListener("click", function () {
+          var current = document.getElementsByClassName("active");
+          current[0].className = current[0].className.replace(" active", "");
+          this.className += " active";
+          for (var j = 0; j < tabs.length; j++) {
+            document.getElementById(tabs[j]).hidden = true;
+          }
+          // show the div corresponding to the tab
+          document.getElementById(this.innerHTML.toLowerCase()).hidden = false;
+        });
+      }
+    </script>
+  </body>
+</html>
