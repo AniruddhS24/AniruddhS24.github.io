@@ -40,6 +40,32 @@
         backdrop-filter: blur(5px);
         -webkit-backdrop-filter: blur(5px);
       }
+      #skill-bubble-container::-webkit-scrollbar {
+        display: none;
+      }
+      .highlight-container,
+      .highlight {
+        position: relative;
+      }
+
+      .highlight-container {
+        display: inline-block;
+      }
+      .highlight-container:before {
+        content: " ";
+        display: block;
+        height: 90%;
+        width: 100%;
+        margin-left: -3px;
+        margin-right: -3px;
+        position: absolute;
+        background: #ffd500;
+        transform: rotate(1deg);
+        top: -1px;
+        left: -1px;
+        border-radius: 20% 25% 20% 24%;
+        padding: 10px 3px 3px 10px;
+      }
     </style>
     <script>
       // on window scroll, set isScrolling to true on navbar
@@ -58,6 +84,17 @@
     <nav id="navbar" class="navbar navbar-expand-lg sticky-top">
       <div class="container-fluid">
         <a class="navbar-brand ms-4" href="#" id="brand">Aniruddh Sriram 👨🏽‍💻</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav ms-auto me-4 gap-4">
             <a class="nav-link active" href="#">About</a>
@@ -69,10 +106,8 @@
       </div>
     </nav>
 
-    <div class="container-fluid" id="about">
-      <div
-        class="row align-items-center justify-content-center vh-100 column-gap-5"
-      >
+    <div class="container-fluid p-5" id="about">
+      <div class="row align-items-center justify-content-center column-gap-5">
         <div class="col-md-auto rounded">
           <img
             src="assets/best.jpg"
@@ -169,11 +204,30 @@
           <div>
             <p style="font-size: 72px" id="hello">Hello! I'm Aniruddh.</p>
             <p class="fs-5">
-              I am a student studying math and computer science in the Turing
-              Scholar's program at UT Austin. I love building software and am
-              passionate about research. My interests lie in full-stack
-              development, machine learning, and using NLP to develop robust
-              fact-checking systems.
+              I study
+              <span class="highlight-container"
+                ><span class="highlight">math and computer science</span></span
+              >
+              in the
+              <a
+                href="https://www.cs.utexas.edu/turing-scholars"
+                class="link-dark"
+                >Turing Scholar's program</a
+              >
+              at UT Austin. I've loved building software since middle school and
+              I am
+              <span class="highlight-container"
+                ><span class="highlight">passionate about research</span></span
+              >. My interests lie in full-stack development,
+              <span class="highlight-container"
+                ><span class="highlight">machine learning</span></span
+              >, and natural language processing, with a particular focus on
+              developing
+              <a href="https://arxiv.org/pdf/2205.06938.pdf" class="link-dark"
+                >resilient fact-checking systems</a
+              >. I'm also a co-founder for a construction tech startup which
+              uses a data-driven approach to predict construction costs and
+              improve resource sustainability.
             </p>
           </div>
           <div style="height: 150px"></div>
@@ -182,55 +236,54 @@
     </div>
 
     <div class="container-fluid p-0" id="experience" hidden>
+      <!-- <div class="py-3">
+        <h1 class="ms-4">Skills.</h1>
+        <div
+          id="skill-bubble-container"
+          class="align-items-center"
+          style="height: 125px; overflow-x: hidden"
+        >
+          <img id="skills-bubbles" class="h-100" />
+        </div>
+      </div> -->
+
       <div class="p-3 mb-3">
         <h1 class="ms-3">Work.</h1>
         <div
           id="work-container"
-          class="row align-items-top row-cols-1 row-cols-md-4"
+          class="row align-items-top row-cols-1 row-cols-md-3 gy-4 px-4"
         >
-          <div class="col">
+          <div id="voleon" class="col">
             <div
               class="card rounded-4 border-0 shadow"
               data-bs-toggle="collapse"
-              href="#devrev-collapse"
+              href="#voleon-collapse"
               role="button"
             >
               <div class="mx-4 d-flex align-items-center" style="height: 200px">
                 <img
-                  src="assets/devrev.webp"
+                  src="assets/voleon.png"
                   class="card-img-top mx-auto d-block"
-                  style="height: 150px; width: 150px"
                 />
               </div>
               <div class="card-body">
-                <h5 class="card-title">DevRev</h5>
-                <p class="card-subtitle">Software Engineering Intern (2021)</p>
-                <div class="collapse" id="devrev-collapse">
+                <h5 class="card-title">Voleon</h5>
+                <p class="card-subtitle">Incoming SWE Intern</p>
+                <p class="card-subtitle text-secondary">Summer 2023</p>
+                <div
+                  class="collapse"
+                  id="voleon-collapse"
+                  data-bs-parent="#work-container"
+                >
                   <ul>
-                    <li>
-                      Developing intelligent systems to bridge the gap between
-                      developers and product
-                    </li>
-                    <li>
-                      Built word2vec-based model in Python using GitHub commit
-                      data to generate vector representations of developers
-                    </li>
-                    <li>
-                      Engineers working in similar areas are modeled to be
-                      closer together (by cosine similarity) in their embeddings
-                    </li>
-                    <li>
-                      Trained a feed-forward neural network in PyTorch to
-                      predict assignees of GitHub issues onto the embedding
-                      space
-                    </li>
+                    <li>Coming soon!</li>
                   </ul>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="col">
+          <div id="bloomberg" class="col">
             <div
               class="card rounded-4 border-0 shadow"
               data-bs-toggle="collapse"
@@ -245,8 +298,13 @@
               </div>
               <div class="card-body">
                 <h5 class="card-title">Bloomberg</h5>
-                <p class="card-subtitle">Software Engineering Intern (2022)</p>
-                <div class="collapse" id="bloomberg-collapse">
+                <p class="card-subtitle">SWE Intern</p>
+                <p class="card-subtitle text-secondary">Summer 2022</p>
+                <div
+                  class="collapse"
+                  id="bloomberg-collapse"
+                  data-bs-parent="#work-container"
+                >
                   <ul>
                     <li>
                       Modified backend in Python to dynamically allocate
@@ -272,7 +330,7 @@
             </div>
           </div>
 
-          <div class="col">
+          <div id="cornerstone" class="col">
             <div
               class="card rounded-4 border-0 shadow"
               data-bs-toggle="collapse"
@@ -288,8 +346,13 @@
               </div>
               <div class="card-body">
                 <h5 class="card-title">Cornerstone</h5>
-                <p class="card-subtitle">Co-Founder and CTO (2022)</p>
-                <div class="collapse" id="cornerstone-collapse">
+                <p class="card-subtitle">Co-Founder and CTO</p>
+                <p class="card-subtitle text-secondary">Dec 2021 - Present</p>
+                <div
+                  class="collapse"
+                  id="cornerstone-collapse"
+                  data-bs-parent="#work-container"
+                >
                   <ul>
                     <li>
                       Building tech infra for SaaS proptech startup that brings
@@ -305,24 +368,294 @@
               </div>
             </div>
           </div>
+
+          <div id="devrev" class="col">
+            <div
+              class="card rounded-4 border-0 shadow"
+              data-bs-toggle="collapse"
+              href="#devrev-collapse"
+              role="button"
+            >
+              <div class="mx-4 d-flex align-items-center" style="height: 200px">
+                <img
+                  src="assets/devrev.webp"
+                  class="card-img-top mx-auto d-block"
+                  style="height: 150px; width: 150px"
+                />
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">DevRev</h5>
+                <p class="card-subtitle">SWE & ML Intern</p>
+                <p class="card-subtitle text-secondary">Summer 2021</p>
+                <div
+                  class="collapse"
+                  id="devrev-collapse"
+                  data-bs-parent="#work-container"
+                >
+                  <ul>
+                    <li>
+                      Developing intelligent systems to bridge the gap between
+                      developers and product
+                    </li>
+                    <li>
+                      Built word2vec-based model in Python using GitHub commit
+                      data to generate vector representations of developers
+                    </li>
+                    <li>
+                      Engineers working in similar areas are modeled to be
+                      closer together (by cosine similarity) in their embeddings
+                    </li>
+                    <li>
+                      Trained a feed-forward neural network in PyTorch to
+                      predict assignees of GitHub issues onto the embedding
+                      space
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="taur-lab" class="col">
+            <div
+              class="card rounded-4 border-0 shadow"
+              data-bs-toggle="collapse"
+              href="#taur-collapse"
+              role="button"
+            >
+              <div class="mx-4 d-flex align-items-center" style="height: 200px">
+                <img
+                  src="assets/taur-lab.png"
+                  class="card-img-top mx-auto d-block"
+                  style="width: 200px"
+                />
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">TAUR Lab</h5>
+                <p class="card-subtitle">Undergraduate Researcher</p>
+                <p class="card-subtitle text-secondary">Aug 2020 - Present</p>
+                <div
+                  class="collapse"
+                  id="taur-collapse"
+                  data-bs-parent="#work-container"
+                >
+                  <ul>
+                    <li>
+                      Conducting NLP research in automatic fact-checking under
+                      Dr. Durrett
+                    </li>
+                    <li>Part of undergraduate NLP reading group</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="wolfram" class="col">
+            <div
+              class="card rounded-4 border-0 shadow"
+              data-bs-toggle="collapse"
+              href="#wolfram-collapse"
+              role="button"
+            >
+              <div class="mx-4 d-flex align-items-center" style="height: 200px">
+                <img
+                  src="assets/wolfram.jpeg"
+                  class="card-img-top mx-auto d-block"
+                  style="width: 250px"
+                />
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Wolfram Research</h5>
+                <p class="card-subtitle">Summer Research Intern</p>
+                <p class="card-subtitle text-secondary">Summer 2019</p>
+                <div
+                  class="collapse"
+                  id="wolfram-collapse"
+                  data-bs-parent="#work-container"
+                >
+                  <ul>
+                    <li>
+                      Summer research program for top high-school computer
+                      science students across the world.
+                    </li>
+                    <li>
+                      Investigated the Rule 45 elementary cellular automaton to
+                      analyze pattern periodicity. Used Wolfram Mathematica.
+                      <a
+                        href="https://community.wolfram.com/groups/-/m/t/1733073"
+                        >report</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="explorastay" class="col">
+            <div
+              class="card rounded-4 border-0 shadow"
+              data-bs-toggle="collapse"
+              href="#explorastay-collapse"
+              role="button"
+            >
+              <div class="mx-4 d-flex align-items-center" style="height: 200px">
+                <img
+                  src="assets/explorastay.jpeg"
+                  class="card-img-top mx-auto d-block"
+                  style="width: 150px"
+                />
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Explorastay</h5>
+                <p class="card-subtitle">Software Engineer</p>
+                <p class="card-subtitle text-secondary">Summer 2019</p>
+                <div
+                  class="collapse"
+                  id="explorastay-collapse"
+                  data-bs-parent="#work-container"
+                >
+                  <ul>
+                    <li>
+                      Joined as backend engineer with a small team developing
+                      explorastay.com, a mid-term rental platform
+                    </li>
+                    <li>
+                      Developed automated web scraper from scratch to extract
+                      apartment listings from popular rental sites using
+                      Selenium and updated database with new listings through
+                      SQLAlchemy
+                    </li>
+                    <li>
+                      Integrated NLP into site chatbot for intelligent searching
+                      and enhanced customer experience
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- <div class="bg-black">
-        <h1 class="ms-4 text-white">Skills.</h1>
-        <div
-          id="skill-bubble-container"
-          class="align-items-center overflow-x-hidden my-3 pb-3"
-          style="height: 200px"
-        >
-          <img id="skills-bubbles" class="h-100" />
-        </div>
-      </div> -->
-
       <div class="p-3 bg-black">
-        <div class="row align-items-top justify-content-center">
-          <h1 class="ms-3 text-white">Projects.</h1>
-          <div class="col" style="height: 200px"></div>
+        <h1 class="ms-3 text-white">Projects.</h1>
+        <div
+          id="projects-container"
+          class="row align-items-top row-cols-1 row-cols-md-2 gy-4 px-4"
+        >
+          <div id="proj1" class="col">
+            <a
+              href="https://github.com/AniruddhS24/cov-aid"
+              class="card rounded-4 border-0 bg-dark"
+            >
+              <div class="card-body">
+                <h5 class="card-title text-white fs-2">cov-aid</h5>
+                <p class="card-subtitle text-white">
+                  COVID-19 case projection with deep learning and recurrent
+                  networks
+                </p>
+                <div class="mt-4">
+                  <span class="badge text-white coding">PYTHON</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div id="proj2" class="col">
+            <a
+              href="https://github.com/AniruddhS24/Venture"
+              class="card rounded-4 border-0 bg-dark"
+            >
+              <div class="card-body">
+                <h5 class="card-title text-white fs-2">Venture</h5>
+                <p class="card-subtitle text-white">
+                  Social media app for sharing local events
+                </p>
+                <div class="mt-4">
+                  <span class="badge text-white coding">JAVASCRIPT</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div id="proj3" class="col">
+            <a
+              href="https://github.com/AniruddhS24/feedback-analysis"
+              class="card rounded-4 border-0 bg-dark"
+            >
+              <div class="card-body">
+                <h5 class="card-title text-white fs-2">feedback-analysis</h5>
+                <p class="card-subtitle text-white">
+                  Tool to analyze textual feedback and produce short, meaningful
+                  highlights that characterize sentiment.
+                </p>
+                <div class="mt-4">
+                  <span class="badge text-white coding">PYTHON</span>
+                  <span class="badge text-white coding">SHELL</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div id="proj4" class="col">
+            <a
+              href="https://github.com/AniruddhS24/ArithmeticEvaluator"
+              class="card rounded-4 border-0 bg-dark"
+            >
+              <div class="card-body">
+                <h5 class="card-title text-white fs-2">arithmetic-evaluator</h5>
+                <p class="card-subtitle text-white">
+                  Simple scientific calculator that uses Dijsktra's Shunting
+                  Yard Algorithm to evaluate arithmetic expressions.
+                </p>
+                <div class="mt-4">
+                  <span class="badge text-white coding">JAVA</span>
+                  <span class="badge text-white coding">JUPYTER NOTEBOOK</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div id="proj5" class="col">
+            <a
+              href="https://github.com/AniruddhS24/Binary-ISA-Classifier"
+              class="card rounded-4 border-0 bg-dark"
+            >
+              <div class="card-body">
+                <h5 class="card-title text-white fs-2">
+                  binary-isa-classifier
+                </h5>
+                <p class="card-subtitle text-white">
+                  Classify binaries from a set of 12 instruction set
+                  architectures (ISA)
+                </p>
+                <div class="mt-4">
+                  <span class="badge text-white coding">PYTHON</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div id="proj6" class="col">
+            <a
+              href="https://github.com/AniruddhS24/cellular-automata"
+              class="card rounded-4 border-0 bg-dark"
+            >
+              <div class="card-body">
+                <h5 class="card-title text-white fs-2">cellular-automata</h5>
+                <p class="card-subtitle text-white">
+                  Generate and visualize different elementary cellular automata
+                  given rule number
+                </p>
+                <div class="mt-4">
+                  <span class="badge text-white coding">JAVA</span>
+                  <span class="badge text-dark coding">MATHEMATICA</span>
+                </div>
+              </div>
+            </a>
+          </div>
         </div>
       </div>
 
@@ -330,21 +663,48 @@
         <h1 class="ms-4">Skills.</h1>
         <div
           id="skill-bubble-container"
-          class="align-items-center overflow-x-hidden"
-          style="height: 150px"
+          class="align-items-center"
+          style="height: 125px; overflow-x: hidden"
         >
           <img id="skills-bubbles" class="h-100" />
+        </div>
+        <div class="mt-3">
+          <h1 class="ms-4 fs-3">Tools.</h1>
+          <p class="ms-4 fs-5">
+            I am proficient in Python, C++, Java, JavaScript, Numpy, PyTorch,
+            and Matplotlib. I have experience in Golang, React, and Apache
+            Spark.
+          </p>
+          <h1 class="ms-4 fs-3">Languages.</h1>
+          <p class="ms-4 fs-5">I can speak English, Tamil, and Spanish!</p>
+          <h1 class="ms-4 fs-3">Interests.</h1>
+          <p class="ms-4 fs-5">I like basketball, poker, and acrylic art.</p>
         </div>
       </div>
     </div>
 
     <div class="container-fluid p-0" id="research" hidden>
-      <div class="p-3 vh-100">
+      <div class="p-3">
         <h1 class="ms-3">Research.</h1>
-        <p class="ms-3">
+        <p class="ms-3 fs-5">
           I am currently a member of the UT Austin TAUR lab, where I work on NLP
-          (Natural Language Processing) research. I work with Jifan Chen and Dr.
-          Greg Durrett to build robust fact checking systems.
+          (Natural Language Processing) research. I work with
+          <a href="https://jifan-chen.github.io/" class="link-secondary"
+            >Jifan Chen</a
+          >
+          and
+          <a href="https://www.cs.utexas.edu/~gdurrett/" class="link-secondary"
+            >Dr. Greg Durrett</a
+          >
+          to build robust fact checking systems. I also really enjoy teaching,
+          and I was previously a TA for
+          <a
+            href="https://ms-datascience.utexas.edu/courses/data-structures"
+            class="link-secondary"
+            >DSC 395T: Data Structures & Algorithms</a
+          >
+          for the MSDS program at UT. I also lead a DiRP (Directed Reading
+          Program) group for NLP.
         </p>
         <div class="m-3">
           <div class="card rounded-4">
@@ -378,7 +738,7 @@
     <div class="container-fluid p-0" id="blog" hidden>
       <div class="p-3 bg-black">
         <h1 class="ms-3 text-white">Blog.</h1>
-        <p class="ms-3 text-white">
+        <p class="ms-3 text-white fs-5">
           I write about random machine learning topics, math, and my research. I
           also write about my interests in technology trends and economics.
         </p>
@@ -408,7 +768,7 @@
     </div>
 
     <!-- add a footer -->
-    <footer class="footer mt-auto py-2 bg-light">
+    <footer class="footer mt-auto py-2 bg-light" hidden>
       <div class="container-fluid">
         <span class="text-muted">&copy; 2023 Aniruddh Sriram</span>
       </div>
@@ -466,10 +826,10 @@
         // every 2 seconds, change the color of rolediv
         var rolediv_index = 0;
         const roles = [
-          "Full Stack Developer",
+          "Software Developer",
           "Mathematician",
           "NLP Researcher",
-          "Hooper",
+          "Basketball Fan",
           "Tech Enthusiast",
           "Acrylic Artist",
         ];
@@ -541,15 +901,23 @@
           .setAttribute("src", skill_url);
 
         // make skill-bubble-container slowly scroll to the right
-
         var skill_bubble_container = document.getElementById(
           "skill-bubble-container"
         );
         var skill_bubble_container_left = 0;
-        setInterval(() => {
+        var intvl = setInterval(() => {
           skill_bubble_container_left += 1;
           skill_bubble_container.scrollLeft = skill_bubble_container_left;
+          if (skill_bubble_container_left > 500) {
+            skill_bubble_container.style.overflowX = "scroll";
+            clearInterval(intvl);
+          }
         }, 20);
+
+        // if the user hovers over the skill section though, stop the automatic scrolling
+        // skill_bubble_container.addEventListener("mouseover", function () {
+        //   clearInterval(intvl);
+        // });
 
         // For each image inside the work section (devrev, bloomberg, etc) make it a bit bigger when hovering over it
         var work_images = document
@@ -564,6 +932,41 @@
             this.style.transform = "scale(1)";
             this.style.transition = "transform 0.5s";
           });
+        }
+
+        // Same for projects
+        var project_cards = document
+          .getElementById("projects-container")
+          .getElementsByClassName("card");
+        for (var i = 0; i < project_cards.length; i++) {
+          project_cards[i].addEventListener("mouseover", function () {
+            this.style.transform = "scale(1.05)";
+            this.style.transition = "transform 0.5s";
+          });
+          project_cards[i].addEventListener("mouseout", function () {
+            this.style.transform = "scale(1)";
+            this.style.transition = "transform 0.5s";
+          });
+        }
+
+        // Get all spans with class="coding" and set their color to blue
+        const coding_colors = {
+          PYTHON: "#3572A5",
+          JAVA: "#b07219",
+          JAVASCRIPT: "#f1e05a",
+          GO: "#00ADD8",
+          "C++": "#f34b7d",
+          C: "#555555",
+          HTML: "#e34c26",
+          CSS: "#563d7c",
+          SHELL: "#89e051",
+          "JUPYTER NOTEBOOK": "#DA5B0B",
+          MATHEMATICA: "#FEFEFE",
+        };
+        var coding_spans = document.getElementsByClassName("coding");
+        for (var i = 0; i < coding_spans.length; i++) {
+          coding_spans[i].style.backgroundColor =
+            coding_colors[coding_spans[i].innerHTML];
         }
       }
 
