@@ -218,11 +218,13 @@
               I am
               <span class="highlight-container"
                 ><span class="highlight">passionate about research</span></span
-              >. My interests lie in full-stack development,
+              >. My interests lie in full-stack development, machine learning ,
+              and
               <span class="highlight-container"
-                ><span class="highlight">machine learning</span></span
-              >, and natural language processing, with a particular focus on
-              developing
+                ><span class="highlight"
+                  >natural language processing</span
+                ></span
+              >, with a particular focus on developing
               <a href="https://arxiv.org/pdf/2205.06938.pdf" class="link-dark"
                 >resilient fact-checking systems</a
               >. I'm also a co-founder for a construction tech startup which
@@ -249,6 +251,7 @@
 
       <div class="p-3 mb-3">
         <h1 class="ms-3">Work.</h1>
+        <p class="ms-3 fs-5">Applying what I learn to the real world.</p>
         <div
           id="work-container"
           class="row align-items-top row-cols-1 row-cols-md-3 gy-4 px-4"
@@ -541,9 +544,10 @@
 
       <div class="p-3 bg-black">
         <h1 class="ms-3 text-white">Projects.</h1>
+        <p class="ms-3 fs-5 text-white">Fun things I make at home.</p>
         <div
           id="projects-container"
-          class="row align-items-top row-cols-1 row-cols-md-2 gy-4 px-4"
+          class="row align-items-top row-cols-1 row-cols-md-2 gy-4 px-4 pb-4"
         >
           <div id="proj1" class="col">
             <a
@@ -661,24 +665,16 @@
 
       <div class="py-3">
         <h1 class="ms-4">Skills.</h1>
+        <p class="ms-4 fs-5">
+          I am proficient in Python, C++, Java, JavaScript, PyTorch, and Golang.
+          I have experience in React, Apache Spark, and R.
+        </p>
         <div
           id="skill-bubble-container"
           class="align-items-center"
-          style="height: 125px; overflow-x: hidden"
+          style="height: 125px; overflow-x: scroll"
         >
           <img id="skills-bubbles" class="h-100" />
-        </div>
-        <div class="mt-3">
-          <h1 class="ms-4 fs-3">Tools.</h1>
-          <p class="ms-4 fs-5">
-            I am proficient in Python, C++, Java, JavaScript, Numpy, PyTorch,
-            and Matplotlib. I have experience in Golang, React, and Apache
-            Spark.
-          </p>
-          <h1 class="ms-4 fs-3">Languages.</h1>
-          <p class="ms-4 fs-5">I can speak English, Tamil, and Spanish!</p>
-          <h1 class="ms-4 fs-3">Interests.</h1>
-          <p class="ms-4 fs-5">I like basketball, poker, and acrylic art.</p>
         </div>
       </div>
     </div>
@@ -736,7 +732,7 @@
     </div>
 
     <div class="container-fluid p-0" id="blog" hidden>
-      <div class="p-3 bg-black">
+      <div class="p-3 bg-black vh-100">
         <h1 class="ms-3 text-white">Blog.</h1>
         <p class="ms-3 text-white fs-5">
           I write about random machine learning topics, math, and my research. I
@@ -747,9 +743,12 @@
           class="row align-items-top row-cols-1 row-cols-md-3"
         >
           <div class="col">
-            <a href="#" class="card bg-dark m-2">
+            <a
+              href="https://medium.com/@aniruddh.sriram_47720/variational-autoencoder-vae-e07560b8880a"
+              class="card bg-dark m-2"
+            >
               <img
-                src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Reparameterized_Variational_Autoencoder.png/300px-Reparameterized_Variational_Autoencoder.png"
                 class="card-img-top"
               />
               <div class="card-body">
@@ -841,17 +840,18 @@
           // change the text color to light if its a dark background, and dark if its a light background
         }, 2000);
 
-        // animate the hello text by making it look like it was typed out
         var hello = document.getElementById("hello");
         var hello_text = "Hello! I'm Aniruddh.";
         hello.innerHTML = "";
         var hello_index = 0;
-        setInterval(() => {
+        const type_interval = setInterval(() => {
           if (hello_index < hello_text.length) {
             hello.innerHTML += hello_text[hello_index];
             hello_index++;
           }
-          if (hello_index == hello_text.length) clearInterval(this);
+          if (hello_index == hello_text.length) {
+            clearInterval(type_interval);
+          }
         }, 100);
 
         // make the image black and white
@@ -915,9 +915,9 @@
         }, 20);
 
         // if the user hovers over the skill section though, stop the automatic scrolling
-        // skill_bubble_container.addEventListener("mouseover", function () {
-        //   clearInterval(intvl);
-        // });
+        skill_bubble_container.addEventListener("mouseover", function () {
+          clearInterval(intvl);
+        });
 
         // For each image inside the work section (devrev, bloomberg, etc) make it a bit bigger when hovering over it
         var work_images = document
