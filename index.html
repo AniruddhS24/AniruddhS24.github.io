@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <title>Aniruddh Sriram</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -27,16 +28,41 @@
         width: 32px;
         height: 32px;
       }
+      .navbar {
+        background-color: transparent !important;
+        border-color: transparent;
+        transition: background-color 0.5s ease-in-out;
+        backdrop-filter: blur(0);
+        -webkit-backdrop-filter: blur(0);
+      }
+      .navbar.is-scrolling {
+        background-color: rgba(216, 216, 216, 0.7) !important;
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+      }
     </style>
+    <script>
+      // on window scroll, set isScrolling to true on navbar
+      window.addEventListener("scroll", function () {
+        var navbar = document.getElementById("navbar");
+        // if scrollTop > 50 then set isScrolling to true
+        if (window.scrollY > 0) {
+          navbar.classList.add("is-scrolling");
+        } else {
+          navbar.classList.remove("is-scrolling");
+        }
+      });
+    </script>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
+    <nav id="navbar" class="navbar navbar-expand-lg sticky-top">
       <div class="container-fluid">
+        <a class="navbar-brand ms-4" href="#" id="brand">Aniruddh Sriram 👨🏽‍💻</a>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav ms-auto me-4 gap-4">
             <a class="nav-link active" href="#">About</a>
-            <a class="nav-link" href="#">Projects</a>
-            <a class="nav-link" href="#">Resume</a>
+            <a class="nav-link" href="#">Experience</a>
+            <a class="nav-link" href="#">Research</a>
             <a class="nav-link" href="#">Blog</a>
           </div>
         </div>
@@ -47,18 +73,23 @@
       <div
         class="row align-items-center justify-content-center vh-100 column-gap-5"
       >
-        <div class="col-md-auto">
+        <div class="col-md-auto rounded">
           <img
-            src="assets/aniruddhpfp2.jpg"
-            class="img-fluid rounded mx-auto d-block mb-3"
+            src="assets/best.jpg"
+            class="img-fluid rounded-4 mx-auto d-block mb-3"
             alt="pfp"
             style="width: 250px"
+            id="pfp"
           />
           <!-- <button type="button" class="btn btn-outline-secondary w-100">
             Full Stack Developer
           </button> -->
-          <div class="mt-0 mb-0 bg-light rounded">
-            <p class="fs-6 text-center text-secondary p-1" id="rolediv">
+          <div class="mt-0 mb-0 rounded">
+            <p
+              class="text-center fst-italic"
+              id="rolediv"
+              style="font-size: 17px"
+            >
               Full Stack Developer
             </p>
           </div>
@@ -124,9 +155,14 @@
             </div>
             <hr />
             <!-- <div class="mt-2 bg-light p-2 rounded text-center">Resume</div> -->
-            <button type="button" class="btn btn-dark mt-2 w-100">
+            <a
+              target="_blank"
+              href="https://drive.google.com/file/d/119gAR28xhbwWaeoWXJuxVxw7bb1dAQtl/view?usp=sharing"
+              type="button"
+              class="btn btn-dark mt-2 w-100"
+            >
               Resume
-            </button>
+            </a>
           </div>
         </div>
         <div class="col-6">
@@ -145,35 +181,251 @@
       </div>
     </div>
 
-    <div class="container-fluid" id="projects" hidden>Projects</div>
+    <div class="container-fluid p-0" id="experience" hidden>
+      <div class="p-3 mb-3">
+        <h1 class="ms-3">Work.</h1>
+        <div
+          id="work-container"
+          class="row align-items-top row-cols-1 row-cols-md-4"
+        >
+          <div class="col">
+            <div
+              class="card rounded-4 border-0 shadow"
+              data-bs-toggle="collapse"
+              href="#devrev-collapse"
+              role="button"
+            >
+              <div class="mx-4 d-flex align-items-center" style="height: 200px">
+                <img
+                  src="assets/devrev.webp"
+                  class="card-img-top mx-auto d-block"
+                  style="height: 150px; width: 150px"
+                />
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">DevRev</h5>
+                <p class="card-subtitle">Software Engineering Intern (2021)</p>
+                <div class="collapse" id="devrev-collapse">
+                  <ul>
+                    <li>
+                      Developing intelligent systems to bridge the gap between
+                      developers and product
+                    </li>
+                    <li>
+                      Built word2vec-based model in Python using GitHub commit
+                      data to generate vector representations of developers
+                    </li>
+                    <li>
+                      Engineers working in similar areas are modeled to be
+                      closer together (by cosine similarity) in their embeddings
+                    </li>
+                    <li>
+                      Trained a feed-forward neural network in PyTorch to
+                      predict assignees of GitHub issues onto the embedding
+                      space
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
 
-    <div class="container-fluid" id="resume" hidden>Resume</div>
+          <div class="col">
+            <div
+              class="card rounded-4 border-0 shadow"
+              data-bs-toggle="collapse"
+              href="#bloomberg-collapse"
+              role="button"
+            >
+              <div class="mx-4 d-flex align-items-center" style="height: 200px">
+                <img
+                  src="assets/bloomberg.png"
+                  class="card-img-top mx-auto d-block"
+                />
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Bloomberg</h5>
+                <p class="card-subtitle">Software Engineering Intern (2022)</p>
+                <div class="collapse" id="bloomberg-collapse">
+                  <ul>
+                    <li>
+                      Modified backend in Python to dynamically allocate
+                      resources in our cluster using Apache Spark in Kubernetes
+                      mode
+                    </li>
+                    <li>
+                      Eliminated OOM errors in large jobs and resource
+                      underutilization in small jobs
+                    </li>
+                    <li>
+                      Extracted features and designed an algorithm to generate
+                      Spark resource configurations using heuristics and KNN
+                      with historical runs
+                    </li>
+                    <li>
+                      Resulted in a 59% speedup for our largest validation job
+                      and 27% decrease in unused resources for small jobs
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
 
-    <div class="container-fluid" id="blog" hidden>Blog</div>
+          <div class="col">
+            <div
+              class="card rounded-4 border-0 shadow"
+              data-bs-toggle="collapse"
+              href="#cornerstone-collapse"
+              role="button"
+            >
+              <div class="mx-4 d-flex align-items-center" style="height: 200px">
+                <img
+                  src="assets/cornerstone.jpg"
+                  class="card-img-top mx-auto d-block"
+                  style="width: 150px"
+                />
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Cornerstone</h5>
+                <p class="card-subtitle">Co-Founder and CTO (2022)</p>
+                <div class="collapse" id="cornerstone-collapse">
+                  <ul>
+                    <li>
+                      Building tech infra for SaaS proptech startup that brings
+                      frictionless homebuilding to life
+                    </li>
+                    <li>Raised over 22k in non-dilutive grant funding</li>
+                    <li>
+                      Built and deployed mobile app from scratch with React
+                      Native frontend and Golang and MongoDB backend
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="bg-black">
+        <h1 class="ms-4 text-white">Skills.</h1>
+        <div
+          id="skill-bubble-container"
+          class="align-items-center overflow-x-hidden my-3 pb-3"
+          style="height: 200px"
+        >
+          <img id="skills-bubbles" class="h-100" />
+        </div>
+      </div> -->
+
+      <div class="p-3 bg-black">
+        <div class="row align-items-top justify-content-center">
+          <h1 class="ms-3 text-white">Projects.</h1>
+          <div class="col" style="height: 200px"></div>
+        </div>
+      </div>
+
+      <div class="py-3">
+        <h1 class="ms-4">Skills.</h1>
+        <div
+          id="skill-bubble-container"
+          class="align-items-center overflow-x-hidden"
+          style="height: 150px"
+        >
+          <img id="skills-bubbles" class="h-100" />
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid p-0" id="research" hidden>
+      <div class="p-3 vh-100">
+        <h1 class="ms-3">Research.</h1>
+        <p class="ms-3">
+          I am currently a member of the UT Austin TAUR lab, where I work on NLP
+          (Natural Language Processing) research. I work with Jifan Chen and Dr.
+          Greg Durrett to build robust fact checking systems.
+        </p>
+        <div class="m-3">
+          <div class="card rounded-4">
+            <div class="card-body">
+              <h5 class="card-title">
+                Generating Literal and Implied Subquestions to Fact-check
+                Complex Claims
+              </h5>
+              <p class="card-subtitle">
+                Jifan Chen, Aniruddh Sriram, Eunsol Choi, Greg Durrett
+              </p>
+              <p class="card-text fst-italic">Proceedings of EMNLP 2022</p>
+              <a
+                target="_blank"
+                href="https://arxiv.org/pdf/2205.06938.pdf"
+                class="btn btn-outline-secondary btn-sm"
+                >Paper</a
+              >
+              <a
+                target="_blank"
+                href="https://www.cs.utexas.edu/~jfchen/claim-decomp/index.html"
+                class="btn btn-outline-secondary btn-sm"
+                >Code</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid p-0" id="blog" hidden>
+      <div class="p-3 bg-black">
+        <h1 class="ms-3 text-white">Blog.</h1>
+        <p class="ms-3 text-white">
+          I write about random machine learning topics, math, and my research. I
+          also write about my interests in technology trends and economics.
+        </p>
+        <div
+          id="blog-container"
+          class="row align-items-top row-cols-1 row-cols-md-3"
+        >
+          <div class="col">
+            <a href="#" class="card bg-dark m-2">
+              <img
+                src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
+                class="card-img-top"
+              />
+              <div class="card-body">
+                <h5 class="card-title text-white">
+                  A Gentle Introduction to Variational Autoencoders (VAEs)
+                </h5>
+                <p class="card-subtitle text-white fst-italic">April 2023</p>
+                <p class="card-text text-white">
+                  An overview of dimensionality reduction techniques and VAEs
+                </p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- add a footer -->
+    <footer class="footer mt-auto py-2 bg-light">
+      <div class="container-fluid">
+        <span class="text-muted">&copy; 2023 Aniruddh Sriram</span>
+      </div>
+    </footer>
     <script>
       feather.replace();
 
-      // every 2 seconds, change the color of rolediv
-      var rolediv_index = 0;
-      const roles = [
-        "Full Stack Developer",
-        "Mathematician",
-        "Researcher",
-        "Student",
-        "Tech Enthusiast",
-        "Acrylic Artist",
-      ];
-      setInterval(() => {
-        let rolediv = document.getElementById("rolediv");
-        // rolediv.style.backgroundColor = light_colors[rolediv_index];
-        rolediv.innerHTML = roles[rolediv_index];
-        rolediv_index = (rolediv_index + 1) % roles.length;
-        // change the text color to light if its a dark background, and dark if its a light background
-      }, 2000);
-
       // handle navigation tab changing
+      const tabs = ["about", "experience", "research", "blog"];
+      var ran_tabs = {};
+      for (var i = 0; i < tabs.length; i++) {
+        ran_tabs[tabs[i]] = false;
+      }
+
+      aboutPageScript();
+
       var navlinks = document.getElementsByClassName("nav-link");
-      const tabs = ["about", "projects", "resume", "blog"];
       for (var i = 0; i < navlinks.length; i++) {
         navlinks[i].addEventListener("click", function () {
           var current = document.getElementsByClassName("active");
@@ -183,8 +435,156 @@
             document.getElementById(tabs[j]).hidden = true;
           }
           // show the div corresponding to the tab
-          document.getElementById(this.innerHTML.toLowerCase()).hidden = false;
+          const tab = this.innerHTML.toLowerCase();
+          document.getElementById(tab).hidden = false;
+          if (tab == "experience" && !ran_tabs["experience"]) {
+            experiencePageScript();
+          } else if (tab == "about" && !ran_tabs["about"]) {
+            aboutPageScript();
+          } else if (tab == "research" && !ran_tabs["research"]) {
+            researchPageScript();
+          } else if (tab == "blog" && !ran_tabs["blog"]) {
+            blogPageScript();
+          }
         });
+      }
+
+      // when clicking on the navbar brand, go to the About page
+      document.getElementById("brand").addEventListener("click", function () {
+        var current = document.getElementsByClassName("active");
+        current[0].className = current[0].className.replace(" active", "");
+        document.getElementById("about").className += " active";
+        for (var j = 0; j < tabs.length; j++) {
+          document.getElementById(tabs[j]).hidden = true;
+        }
+        // show the div corresponding to the tab
+        document.getElementById("about").hidden = false;
+      });
+
+      function aboutPageScript() {
+        ran_tabs["about"] = true;
+        // every 2 seconds, change the color of rolediv
+        var rolediv_index = 0;
+        const roles = [
+          "Full Stack Developer",
+          "Mathematician",
+          "NLP Researcher",
+          "Hooper",
+          "Tech Enthusiast",
+          "Acrylic Artist",
+        ];
+        setInterval(() => {
+          let rolediv = document.getElementById("rolediv");
+          // rolediv.style.backgroundColor = light_colors[rolediv_index];
+          rolediv.innerHTML = roles[rolediv_index];
+          rolediv_index = (rolediv_index + 1) % roles.length;
+          // change the text color to light if its a dark background, and dark if its a light background
+        }, 2000);
+
+        // animate the hello text by making it look like it was typed out
+        var hello = document.getElementById("hello");
+        var hello_text = "Hello! I'm Aniruddh.";
+        hello.innerHTML = "";
+        var hello_index = 0;
+        setInterval(() => {
+          if (hello_index < hello_text.length) {
+            hello.innerHTML += hello_text[hello_index];
+            hello_index++;
+          }
+          if (hello_index == hello_text.length) clearInterval(this);
+        }, 100);
+
+        // make the image black and white
+        var img = document.getElementById("pfp");
+        img.style.filter = "grayscale(100%)";
+        img.style.webkitFilter = "grayscale(100%)";
+
+        // make the image back to colored when hovering over it
+        img.addEventListener("mouseover", function () {
+          img.style.filter = "grayscale(0%)";
+          img.style.webkitFilter = "grayscale(0%)";
+        });
+        // make the image black and white when not hovering over it
+        img.addEventListener("mouseout", function () {
+          img.style.filter = "grayscale(100%)";
+          img.style.webkitFilter = "grayscale(100%)";
+        });
+      }
+
+      function experiencePageScript() {
+        ran_tabs["experience"] = true;
+        const skill_list = [
+          "cpp",
+          "java",
+          "go",
+          "py",
+          "git",
+          "js",
+          "kubernetes",
+          "docker",
+          "mongodb",
+          "aws",
+          "react",
+          "pytorch",
+          "tensorflow",
+          "latex",
+          "gcp",
+        ];
+        var skill_url = "https://skillicons.dev/icons?i=";
+        for (var i = 0; i < skill_list.length; i++) {
+          skill_url += skill_list[i];
+          if (i != skill_list.length - 1) skill_url += ",";
+        }
+        skill_url += "&perline=" + skill_list.length.toString() + "&theme=dark";
+        document
+          .getElementById("skills-bubbles")
+          .setAttribute("src", skill_url);
+
+        // make skill-bubble-container slowly scroll to the right
+
+        var skill_bubble_container = document.getElementById(
+          "skill-bubble-container"
+        );
+        var skill_bubble_container_left = 0;
+        setInterval(() => {
+          skill_bubble_container_left += 1;
+          skill_bubble_container.scrollLeft = skill_bubble_container_left;
+        }, 20);
+
+        // For each image inside the work section (devrev, bloomberg, etc) make it a bit bigger when hovering over it
+        var work_images = document
+          .getElementById("work-container")
+          .getElementsByClassName("card");
+        for (var i = 0; i < work_images.length; i++) {
+          work_images[i].addEventListener("mouseover", function () {
+            this.style.transform = "scale(1.05)";
+            this.style.transition = "transform 0.5s";
+          });
+          work_images[i].addEventListener("mouseout", function () {
+            this.style.transform = "scale(1)";
+            this.style.transition = "transform 0.5s";
+          });
+        }
+      }
+
+      function researchPageScript() {}
+
+      function blogPageScript() {
+        ran_tabs["blog"] = true;
+        var blog_posts = document
+          .getElementById("blog-container")
+          .getElementsByClassName("card");
+
+        for (var i = 0; i < blog_posts.length; i++) {
+          blog_posts[i].addEventListener("mouseover", function () {
+            this.style.transform = "scale(1.05)";
+            this.style.transition = "transform 0.5s";
+          });
+          blog_posts[i].addEventListener("mouseout", function () {
+            this.style.transform = "scale(1)";
+            this.style.transition = "transform 0.5s";
+          });
+        }
       }
     </script>
   </body>
