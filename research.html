@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Aniruddh Sriram</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.cdnfonts.com/css/sf-pro-display"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <style>
+      body {
+        font-family: "SF Pro Display", sans-serif;
+      }
+      .feather-32 {
+        width: 32px;
+        height: 32px;
+      }
+      .navbar {
+        background-color: transparent !important;
+        border-color: transparent;
+        transition: background-color 0.5s ease-in-out;
+        backdrop-filter: blur(0);
+        -webkit-backdrop-filter: blur(0);
+      }
+      .navbar.is-scrolling {
+        background-color: rgba(216, 216, 216, 0.7) !important;
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+      }
+      #skill-bubble-container::-webkit-scrollbar {
+        display: none;
+      }
+      .highlight-container,
+      .highlight {
+        position: relative;
+      }
+
+      .highlight-container {
+        display: inline-block;
+      }
+      .highlight-container:before {
+        content: " ";
+        display: block;
+        height: 90%;
+        width: 100%;
+        margin-left: -3px;
+        margin-right: -3px;
+        position: absolute;
+        background: #ffd500;
+        transform: rotate(1deg);
+        top: -1px;
+        left: -1px;
+        border-radius: 20% 25% 20% 24%;
+        padding: 10px 3px 3px 10px;
+      }
+    </style>
+    <script>
+      // on window scroll, set isScrolling to true on navbar
+      window.addEventListener("scroll", function () {
+        var navbar = document.getElementById("navbar");
+        // if scrollTop > 50 then set isScrolling to true
+        if (window.scrollY > 0) {
+          navbar.classList.add("is-scrolling");
+        } else {
+          navbar.classList.remove("is-scrolling");
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <nav id="navbar" class="navbar navbar-expand-lg sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand ms-4" href="index.html" id="brand"
+          >Aniruddh Sriram 👨🏽‍💻</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav ms-auto me-4 gap-4">
+            <a class="nav-link" href="index.html">About</a>
+            <a class="nav-link" href="experience.html">Experience</a>
+            <a class="nav-link active" href="research.html">Research</a>
+            <a class="nav-link" href="blog.html">Blog</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="container-fluid p-0" id="research">
+      <div class="p-3">
+        <h1 class="ms-3">Research.</h1>
+        <p class="ms-3 fs-5">
+          I am currently a member of the UT Austin TAUR lab, where I work on NLP
+          (Natural Language Processing) research. I work with
+          <a href="https://jifan-chen.github.io/" class="link-secondary"
+            >Jifan Chen</a
+          >
+          and
+          <a href="https://www.cs.utexas.edu/~gdurrett/" class="link-secondary"
+            >Dr. Greg Durrett</a
+          >
+          to build robust fact checking systems. I also really enjoy teaching,
+          and I was previously a TA for
+          <a
+            href="https://ms-datascience.utexas.edu/courses/data-structures"
+            class="link-secondary"
+            >DSC 395T: Data Structures & Algorithms</a
+          >
+          for the MSDS program at UT. I also lead a DiRP (Directed Reading
+          Program) group for NLP.
+        </p>
+        <div class="m-3">
+          <div class="card rounded-4">
+            <div class="card-body">
+              <h5 class="card-title">
+                Generating Literal and Implied Subquestions to Fact-check
+                Complex Claims
+              </h5>
+              <p class="card-subtitle">
+                Jifan Chen, Aniruddh Sriram, Eunsol Choi, Greg Durrett
+              </p>
+              <p class="card-text fst-italic">Proceedings of EMNLP 2022</p>
+              <a
+                target="_blank"
+                href="https://arxiv.org/pdf/2205.06938.pdf"
+                class="btn btn-outline-secondary btn-sm"
+                >Paper</a
+              >
+              <a
+                target="_blank"
+                href="https://www.cs.utexas.edu/~jfchen/claim-decomp/index.html"
+                class="btn btn-outline-secondary btn-sm"
+                >Code</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script></script>
+  </body>
+</html>
