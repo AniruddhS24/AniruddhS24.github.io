@@ -406,6 +406,23 @@
           id="projects-container"
           class="row align-items-top row-cols-1 row-cols-md-2 gy-4 px-4 pb-4"
         >
+          <div id="proj0" class="col">
+            <a
+              href="https://github.com/AniruddhS24/cuda-wordle"
+              class="card rounded-4 border-0 bg-dark"
+            >
+              <div class="card-body">
+                <h5 class="card-title text-white fs-2">cuda-wordle</h5>
+                <p class="card-subtitle text-white">
+                  CUDA-Optimized Wordle Solver
+                </p>
+                <div class="mt-4">
+                  <span class="badge text-white coding">C++</span>
+                  <span class="badge text-white coding">CUDA</span>
+                </div>
+              </div>
+            </a>
+          </div>
           <div id="proj1" class="col">
             <a
               href="https://github.com/AniruddhS24/cov-aid"
@@ -432,10 +449,12 @@
               <div class="card-body">
                 <h5 class="card-title text-white fs-2">Venture</h5>
                 <p class="card-subtitle text-white">
-                  Social media app for sharing local events
+                  Lightweight social media app for sharing local events and
+                  activities
                 </p>
                 <div class="mt-4">
-                  <span class="badge text-white coding">JAVASCRIPT</span>
+                  <span class="badge text-white coding">REACT NATIVE</span>
+                  <span class="badge text-white coding">NODE.JS</span>
                 </div>
               </div>
             </a>
@@ -449,12 +468,11 @@
               <div class="card-body">
                 <h5 class="card-title text-white fs-2">feedback-analysis</h5>
                 <p class="card-subtitle text-white">
-                  Tool to analyze textual feedback and produce short, meaningful
-                  highlights that characterize sentiment.
+                  Extract text snippets that characterize sentiment in customer
+                  feedback
                 </p>
                 <div class="mt-4">
                   <span class="badge text-white coding">PYTHON</span>
-                  <span class="badge text-white coding">SHELL</span>
                 </div>
               </div>
             </a>
@@ -468,8 +486,8 @@
               <div class="card-body">
                 <h5 class="card-title text-white fs-2">arithmetic-evaluator</h5>
                 <p class="card-subtitle text-white">
-                  Simple scientific calculator that uses Dijsktra's Shunting
-                  Yard Algorithm to evaluate arithmetic expressions.
+                  Scientific calculator based on Dijsktra's Shunting Yard
+                  Algorithm
                 </p>
                 <div class="mt-4">
                   <span class="badge text-white coding">JAVA</span>
@@ -490,7 +508,7 @@
                 </h5>
                 <p class="card-subtitle text-white">
                   Classify binaries from a set of 12 instruction set
-                  architectures (ISA)
+                  architectures
                 </p>
                 <div class="mt-4">
                   <span class="badge text-white coding">PYTHON</span>
@@ -508,7 +526,6 @@
                 <h5 class="card-title text-white fs-2">cellular-automata</h5>
                 <p class="card-subtitle text-white">
                   Generate and visualize different elementary cellular automata
-                  given rule number
                 </p>
                 <div class="mt-4">
                   <span class="badge text-white coding">JAVA</span>
@@ -523,8 +540,8 @@
       <div class="py-3">
         <h1 class="ms-4">Skills.</h1>
         <p class="ms-4 fs-5">
-          I am proficient in Python, C++, Java, JavaScript, PyTorch, and Golang.
-          I have experience in React, Apache Spark, and R.
+          Proficient in Python, C++, Java, JavaScript, PyTorch, and Golang.
+          Experience in React, Apache Spark, and R.
         </p>
         <div
           id="skill-bubble-container"
@@ -626,6 +643,9 @@
           SHELL: "#89e051",
           "JUPYTER NOTEBOOK": "#DA5B0B",
           MATHEMATICA: "#FEFEFE",
+          CUDA: "#3A4E3A",
+          "NODE.JS": "#43853d",
+          "REACT NATIVE": "#61dafb",
         };
         var coding_spans = document.getElementsByClassName("coding");
         for (var i = 0; i < coding_spans.length; i++) {
